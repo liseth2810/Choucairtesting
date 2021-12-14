@@ -1,0 +1,18 @@
+package co.com.qvision.reto.avianca.ui;
+
+import org.openqa.selenium.By;
+
+import net.serenitybdd.screenplay.targets.IFrame;
+import net.serenitybdd.screenplay.targets.Target;
+
+public class UiIFrames {
+
+	private static final IFrame frameDelMedio = IFrame.withPath(By.id("mce_0_ifr"));
+
+	public static final Target PRUEBA_DENTRO_DE_FRAME = Target.the("Texto del div").inIFrame(frameDelMedio).locatedBy("//body[@id='tinymce']/p");
+
+
+	private UiIFrames() {
+
+	}
+}

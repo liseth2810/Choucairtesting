@@ -1,0 +1,29 @@
+package co.com.qvision.reto.avianca.tasks;
+
+import java.io.File;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+
+public class AdblockDemo {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		
+		options.addExtensions(new File("src/test/resources/complementos/extension_4_16_0_0.crx"));
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+		options.merge(capabilities);
+		ChromeDriver driver = new ChromeDriver(options);
+		
+		String pageLocal = "src/test/resources/local_pages/index.html";
+		driver.get("http://demo.guru99.com/test/simple_context_menu.html");
+		driver.manage().window().maximize();
+		// driver.quit();
+	}
+
+}

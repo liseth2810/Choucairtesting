@@ -1,0 +1,23 @@
+package co.com.qvision.reto.avianca.ui;
+
+import co.com.qvision.reto.avianca.ui.page.*;
+import net.serenitybdd.core.pages.PageObject;
+
+public enum Webpage {
+		
+	FRAME_ANIDADO(new PageFrameAnidado()),
+	IFRAME(new PageIFrame()),
+	ALERT_JAVA_SCRIPT(new PageAlertJs());
+	
+	private final PageObject page;
+	
+	Webpage(PageObject page)
+	{
+		this.page=page;
+	}
+	
+	public PageObject page()
+	{
+		return this.page;
+	}
+}

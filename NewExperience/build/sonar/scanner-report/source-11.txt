@@ -1,0 +1,38 @@
+package co.com.qvision.reto.avianca.tasks;
+
+import java.io.File;
+import java.util.Collections;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+
+public class IePrivateMode {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.ie.driver", "src/test/resources/driver/IEDriverServer.exe");
+
+		
+		InternetExplorerOptions capabilities = new InternetExplorerOptions();
+	    capabilities.setCapability(InternetExplorerDriver.FORCE_CREATE_PROCESS, "true");
+	   // capabilities.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);
+	   // capabilities.setCapability("forceCreateProcessApi", "true");
+	   // capabilities.setCapability("browserCommandLineArguments", "-private");
+	    //capabilities.setCapability(InternetExplorerDriver.IE_SWITCHES, "private");
+	    capabilities.setCapability("ie.forceCreateProcessApi", true);
+	    capabilities.setCapability("ie.browserCommandLineSwitches", "-private");
+
+		InternetExplorerDriver driver = new InternetExplorerDriver(capabilities);
+		
+		String pageLocal = "src/test/resources/local_pages/index.html";
+		driver.get("http://demo.guru99.com/test/simple_context_menu.html");
+		driver.manage().window().maximize();
+		// driver.quit();
+	}
+
+}

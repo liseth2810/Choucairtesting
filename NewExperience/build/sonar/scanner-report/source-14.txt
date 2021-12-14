@@ -1,0 +1,32 @@
+package co.com.qvision.reto.avianca.tasks;
+
+
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+import javax.swing.JOptionPane;
+
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
+import static co.com.qvision.reto.avianca.ui.UiIFrames.PRUEBA_DENTRO_DE_FRAME;
+import static co.com.qvision.reto.avianca.ui.Webpage.IFRAME;
+
+public class PruebaIframe implements Task {
+
+
+	public static PruebaIframe enPrograso() {
+		
+		return instrumented(PruebaIframe.class);
+	}
+
+
+	@Override
+	public <T extends Actor> void performAs(T actor) {
+
+		actor.attemptsTo(AbrirElNavegador.en(IFRAME.page()));
+
+		JOptionPane.showMessageDialog(null,PRUEBA_DENTRO_DE_FRAME.resolveFor(actor).getTextContent());
+	
+
+	
+	}
+}

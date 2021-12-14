@@ -1,0 +1,39 @@
+package co.com.qvision.reto.avianca.tasks;
+
+
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+import javax.swing.JOptionPane;
+
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Switch;
+
+import static co.com.qvision.reto.avianca.ui.UiFramesAnidados.PRUEBA_FRAME_ANIDADO;
+import static co.com.qvision.reto.avianca.ui.UiFramesAnidados.FRAME_TITULO;
+import static co.com.qvision.reto.avianca.ui.UiFramesAnidados.FRAME_MEDIO;
+import static co.com.qvision.reto.avianca.ui.Webpage.FRAME_ANIDADO;
+
+
+public class PruebaframeAnidado implements Task {
+
+
+	public static PruebaframeAnidado enPrograso() {
+		
+		return instrumented(PruebaframeAnidado.class);
+	}
+
+	@Override
+	public <T extends Actor> void performAs(T actor) {
+		actor.attemptsTo(AbrirElNavegador.en(FRAME_ANIDADO.page()));
+		
+		actor.attemptsTo(
+			Switch.toParentFrame()
+			.then(Switch.toFrame(FRAME_TITULO.resolveFor(actor)))
+			.then(Switch.toFrame(FRAME_MEDIO.resolveFor(actor)))
+		);
+
+		JOptionPane.showMessageDialog(null, PRUEBA_FRAME_ANIDADO.resolveFor(actor).getTextContent());
+
+	}
+}

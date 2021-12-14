@@ -1,0 +1,25 @@
+package co.com.bancolombia.reto.avianca.stepdefinitions;
+
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+
+import org.fluentlenium.core.Alert;
+
+import co.com.qvision.reto.avianca.tasks.*;
+
+import io.cucumber.java.es.Cuando;
+
+
+public class ReservaDeVueloDefinitions {
+
+//	@Before
+//	public void preparacionDeLaPrueba() {
+//		OnStage.setTheStage(new OnlineCast());
+//	}
+
+	@Cuando("^Pruebas cosas varias$")
+	public void pruebas() {
+		//Actor pruebas = theActorCalled("pruebas");
+		theActorInTheSpotlight().attemptsTo(AlertJs.enPrograso());
+	}
+}

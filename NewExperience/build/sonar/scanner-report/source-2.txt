@@ -1,0 +1,11 @@
+package co.com.qvision.reto.avianca.exceptions;
+
+@SuppressWarnings("serial")
+
+public class ActorNoPuedeConectarseBaseDatosException extends RuntimeException {
+
+	public ActorNoPuedeConectarseBaseDatosException() {
+
+		super("El actor no tiene la habilidad para conectarse a la base de datos");
+	}
+}

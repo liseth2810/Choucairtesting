@@ -1,0 +1,59 @@
+package co.com.qvision.reto.avianca.util;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import net.serenitybdd.core.webdriver.enhancers.BeforeAWebdriverScenario;
+import net.thucydides.core.annotations.Screenshots;
+import net.thucydides.core.model.TestOutcome;
+import net.thucydides.core.model.TestTag;
+import net.thucydides.core.util.EnvironmentVariables;
+import net.thucydides.core.webdriver.SupportedWebDriver;
+
+public class Configuraciones implements BeforeAWebdriverScenario {
+
+	private static final Map<String, String> CAPABILITIES_SCENARIO = new HashMap<>();
+
+	static {
+		CAPABILITIES_SCENARIO.put("handlesAlerts", "true");
+		CAPABILITIES_SCENARIO.put("supportsAlerts", "true");
+		CAPABILITIES_SCENARIO.put("unexpectedAlertBehaviour", "dismiss");
+		//CAPABILITIES_SCENARIO.put("pageLoadStrategy", "none");
+
+	}
+
+	@Override
+	@Screenshots(onlyOnFailures=true)
+	public DesiredCapabilities apply(EnvironmentVariables environmentVariables, SupportedWebDriver driver,
+			TestOutcome testOutcome, DesiredCapabilities capabilities) {
+
+		
+		for (TestTag testTag : testOutcome.getAllTags()) {
+			if ("EstoEsUnaPrueba".equals(testTag.getName())) {
+
+				return addCapabilities(capabilities);
+			}
+		}
+		
+		//InternetExplorerOptions options = new InternetExplorerOptions();
+		//options.setCapability("forceCreateProcessApi", "true");
+		//options.setCapability(InternetExplorerDriver.FORCE_CREATE_PROCESS, "true");
+		//options.setCapability(InternetExplorerDriver.IE_SWITCHES, "-private");
+		//options.setCapability("browserCommandLineArguments", "-private");
+		//return capabilities.internetExplorer().merge(options);
+
+		return capabilities;
+	}
+
+		
+	private DesiredCapabilities addCapabilities(DesiredCapabilities capabilities) {
+		CAPABILITIES_SCENARIO.entrySet().stream()
+				.forEach(key -> capabilities.setCapability(key.getKey(), key.getValue()));
+		return capabilities;
+	}
+}

@@ -1,0 +1,65 @@
+package co.com.qvision.reto.avianca.tasks;
+
+
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Evaluate;
+import net.serenitybdd.screenplay.waits.WaitUntil;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import static co.com.qvision.reto.avianca.ui.Webpage.ALERT_JAVA_SCRIPT;
+import static co.com.qvision.reto.avianca.ui.UiAlertJavaScript.*;
+
+public class AlertJs implements Task {
+
+	String cancelarAlertaTemporalmente = "addJS_Node (null, null, overrideSelectNativeJS_Functions);\r\n" + 
+			"\r\n" + 
+			"function overrideSelectNativeJS_Functions () {\r\n" + 
+			"    window.alert = function alert (message) {\r\n" + 
+			"        console.log (message);\r\n" + 
+			"    }\r\n" + 
+			"}\r\n" + 
+			"\r\n" + 
+			"function addJS_Node (text, s_URL, funcToRun) {\r\n" + 
+			"    var D                                   = document;\r\n" + 
+			"    var scriptNode                          = D.createElement ('script');\r\n" + 
+			"    scriptNode.type                         = \"text/javascript\";\r\n" + 
+			"    if (text)       scriptNode.textContent  = text;\r\n" + 
+			"    if (s_URL)      scriptNode.src          = s_URL;\r\n" + 
+			"    if (funcToRun)  scriptNode.textContent  = '(' + funcToRun.toString() + ')()';\r\n" + 
+			"\r\n" + 
+			"    var targ = D.getElementsByTagName ('head')[0] || D.body || D.documentElement;\r\n" + 
+			"    targ.appendChild (scriptNode);\r\n" + 
+			"}";
+
+	public static AlertJs enPrograso() {
+		
+		return instrumented(AlertJs.class);
+	}
+
+	@Override
+	public <T extends Actor> void performAs(T actor) {
+		actor.attemptsTo(AbrirElNavegador.en(ALERT_JAVA_SCRIPT.page()));
+		
+		//actor.attemptsTo(Evaluate.javascript(cancelarAlertaTemporalmente));
+		actor.attemptsTo(
+
+				WaitUntil.the(BOTON_2, isClickable()),
+				Click.on(BOTON_2)
+				);
+		//BrowseTheWeb.as(actor).getDriver().switchTo().alert().accept();
+		
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+}

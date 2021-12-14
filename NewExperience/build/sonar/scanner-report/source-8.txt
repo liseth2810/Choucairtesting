@@ -1,0 +1,17 @@
+
+package co.com.qvision.reto.avianca.tasks;
+
+import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.actions.DriverTask;
+
+public class Alerta {
+
+    public static Performable Cancelar() {
+        return new DriverTask( driver -> driver.switchTo().alert().accept());
+    }
+
+    public static Performable Aceptar() {
+        return new DriverTask( driver -> driver.switchTo().alert().dismiss());
+    }
+
+}

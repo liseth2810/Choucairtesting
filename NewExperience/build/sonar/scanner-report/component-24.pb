@@ -1,0 +1,1 @@
+ 2javaX<hrCsrc/main/java/co/com/qvision/reto/avianca/util/Configuraciones.java

@@ -1,0 +1,52 @@
+package co.com.qvision.reto.avianca.tasks;
+
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.rest.interactions.Post;
+
+public class Servicio implements Task {
+
+
+
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+
+        actor.attemptsTo(
+        		Post.to("/invento").with(request -> request
+                .header("Accept-Encoding", "gzip,deflate")
+                .header("Content-Type", "text/xml;charset=UTF-8")
+                .header("SOAPAction", "http://localhost:8080/AFCWebServices/services/AutorizarRetiroAFCHttpPort/autorizarRetiroAFC")
+                .header("Connection", "Keep-Alive")
+                .body("<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:msg=\"http://msgfmt.webserv.afc.sophos.com/\" xmlns:def=\"http://def.autorizarRetiro.webserv.afc.sophos.com/\">\n" +
+                        "   <soapenv:Header>\n" +
+                        "      <msg:requestHeader>\n" +
+                        "         <id_sistema>"+ "" +"</id_sistema>\n" +
+                        "         <id_transaccion>"+ "" +"</id_transaccion>\n" +
+                        "      </msg:requestHeader>\n" +
+                        "   </soapenv:Header>\n" +
+                        "   <soapenv:Body>\n" +
+                        "      <def:autorizarRetiroAFCRequest>\n" +
+                        "         <id_banco>"+ "" +"</id_banco>\n" +
+                        "         <codigo_transaccion>"+ "" +"</codigo_transaccion>\n" +
+                        "         <numero_transaccion>"+ "" +"</numero_transaccion>\n" +
+                        "         <fecha_retiro>"+ "" +"</fecha_retiro>\n" +
+                        "         <hora_retiro>"+ "" +"</hora_retiro>\n" +
+                        "         <codigo_oficina>"+ "" +"</codigo_oficina>\n" +
+                        "         <numero_caja>"+ "" +"</numero_caja>\n" +
+                        "         <!--Optional:-->\n" +
+                        "         <numero_transaccion_reverso>"+ "" +"</numero_transaccion_reverso>\n" +
+                        "         <num_cuenta>"+ "" +"</num_cuenta>\n" +
+                        "         <motivo_retiro>"+ "" +"</motivo_retiro>\n" +
+                        "         <forma_pago>"+ "" +"</forma_pago>\n" +
+                        "         <valor_retiro>"+ "" +"</valor_retiro>\n" +
+                        "      </def:autorizarRetiroAFCRequest>\n" +
+                        "   </soapenv:Body>\n" +
+                        "</soapenv:Envelope>")));
+    }
+
+    public static Servicio conLosDatos(){
+        return instrumented(Servicio.class);
+    }
+}

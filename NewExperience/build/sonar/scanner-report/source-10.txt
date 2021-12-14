@@ -1,0 +1,47 @@
+package co.com.qvision.reto.avianca.tasks;
+
+
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+
+import java.io.File;
+
+import javax.swing.JOptionPane;
+
+import org.openqa.selenium.By;
+
+
+public class AlertJsOnLoad implements Task {
+	
+	
+	public static AlertJsOnLoad enPrograso() {
+		
+		return instrumented(AlertJsOnLoad.class);
+	}
+
+	@Override
+	public <T extends Actor> void performAs(T actor) {
+
+		String pageLocal = "src/test/resources/local_pages/index.html";
+		BrowseTheWeb.as(actor).openUrl("file:///"+new File(pageLocal).getAbsolutePath());
+		
+		String ventanaActual = BrowseTheWeb.as(actor).getDriver().getWindowHandle();
+		
+		BrowseTheWeb.as(actor).$(By.linkText("Con JavaScript")).waitUntilPresent().waitUntilVisible().waitUntilClickable().click();
+		
+		try { Thread.sleep(5000); } catch (Exception e) {}
+		
+			
+		for (String ventana : BrowseTheWeb.as(actor).getDriver().getWindowHandles()) {
+			if (!ventanaActual.equalsIgnoreCase(ventana)) {
+				BrowseTheWeb.as(actor).getDriver().switchTo().window(ventana);
+			}
+		}
+		JOptionPane.showConfirmDialog(null,BrowseTheWeb.as(actor)
+				.$(By.cssSelector("h1"))
+				.getText());
+	}
+}

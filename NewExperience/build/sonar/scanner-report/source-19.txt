@@ -1,0 +1,7 @@
+package co.com.qvision.reto.avianca.ui.page;
+
+import net.serenitybdd.core.pages.PageObject;
+import net.thucydides.core.annotations.DefaultUrl;
+
+@DefaultUrl("https://the-internet.herokuapp.com/iframe")
+public class PageIFrame extends PageObject {}

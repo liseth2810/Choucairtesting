@@ -1,0 +1,26 @@
+package co.com.qvision.reto.avianca.tasks;
+
+
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Evaluate;
+
+public class ShadowRoot implements Task {
+
+	private String jQuery = "document.querySelector('print-preview-app').shadowRoot.querySelector('#sidebar').shadowRoot.querySelector('#header').shadowRoot.querySelector('#button-strip > paper-button.cancel-button').click();";
+
+
+	public static ShadowRoot enPrograso() {
+		
+		return instrumented(ShadowRoot.class);
+	}
+
+	@Override
+	public <T extends Actor> void performAs(T actor) {
+
+		actor.attemptsTo(Evaluate.javascript(jQuery));
+
+	}
+}

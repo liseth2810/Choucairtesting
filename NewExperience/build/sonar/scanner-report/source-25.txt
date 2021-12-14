@@ -1,0 +1,21 @@
+
+package co.com.qvision.reto.avianca.util;
+
+import java.io.File;
+
+import javax.swing.JOptionPane;
+
+public class Pruebas {
+
+	
+
+	public static void main(String[] args) {
+
+		int ValorDeVenta;
+
+		do {
+			ValorDeVenta = Integer.parseInt(JOptionPane.showInputDialog("valor venta")) ;
+				
+		} while (1000 < ValorDeVenta  || 50 > ValorDeVenta );
+	}
+}

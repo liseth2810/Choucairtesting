@@ -1,0 +1,48 @@
+SonarQube plugins:
+  - SonarPython 1.16.0.4432 (python)
+  - SonarCSS 1.1.1.1010 (cssfamily)
+  - JaCoCo 1.0.2.475 (jacoco)
+  - SonarGo 1.6.0.719 (go)
+  - SonarKotlin 1.5.0.315 (kotlin)
+  - Svn 1.9.0.1295 (scmsvn)
+  - SonarJS 5.2.1.7778 (javascript)
+  - SonarRuby 1.5.0.315 (ruby)
+  - SonarScala 1.5.0.315 (sonarscala)
+  - SonarC# 7.17.0.9346 (csharp)
+  - SonarJava 5.14.0.18788 (java)
+  - SonarHTML 3.2.0.2082 (web)
+  - Git 1.9.1.1834 (scmgit)
+  - SonarFlex 2.5.1.1831 (flex)
+  - SonarXML 2.0.1.2020 (xml)
+  - SonarPHP 3.2.0.4868 (php)
+  - SonarTS 1.9.0.3766 (typescript)
+  - SonarVB 7.17.0.9346 (vbnet)
+Global server settings:
+  - sonar.core.id=BF41A1F2-AXOg8T68tXyhZs1lhzSL
+  - sonar.core.startTime=2020-07-30T13:17:10-0500
+Project server settings:
+Project scanner properties:
+  - sonar.binaries=C:\Users\QV-3579\Documents\workspace\google2\build\classes\java\main
+  - sonar.host.url=http://localhost:9000
+  - sonar.java.binaries=C:\Users\QV-3579\Documents\workspace\google2\build\classes\java\main
+  - sonar.java.libraries=C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.2.3\7c4f3c474fb2c041d8028740440937705ebb473a\logback-classic-1.2.3.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-junit\2.2.12\e1be15db811df26640bcf591c8b9c8a7f85c6c2d\serenity-junit-2.2.12.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-screenplay-webdriver\2.2.12\5e9dcca15d7c1e88976f7e022f7cedf799cbcb51\serenity-screenplay-webdriver-2.2.12.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-screenplay-rest\2.2.12\dc1d39d070ce4505f3f8195cd94b85cdeaee05f3\serenity-screenplay-rest-2.2.12.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-screenplay\2.2.12\3caf525a8ba8a72e5c4f530299b0a51b0c621b1b\serenity-screenplay-2.2.12.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-rest-assured\2.2.12\3765bd325dbbd1af499538a8c9468f3347879950\serenity-r...
+  - sonar.java.source=1.8
+  - sonar.java.target=1.8
+  - sonar.java.test.binaries=C:\Users\QV-3579\Documents\workspace\google2\build\classes\java\test
+  - sonar.java.test.libraries=C:\Users\QV-3579\Documents\workspace\google2\build\classes\java\main,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.2.3\7c4f3c474fb2c041d8028740440937705ebb473a\logback-classic-1.2.3.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-junit\2.2.12\e1be15db811df26640bcf591c8b9c8a7f85c6c2d\serenity-junit-2.2.12.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-cucumber5\2.2.5\542197bd3f3cd78588e26c8dfc429936fbb471c0\serenity-cucumber5-2.2.5.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-screenplay-webdriver\2.2.12\5e9dcca15d7c1e88976f7e022f7cedf799cbcb51\serenity-screenplay-webdriver-2.2.12.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-screenplay-rest\2.2.12\dc1d39d070ce4505f3f8195cd94b85cdeaee05f3\serenity-screenplay-rest-2.2.12.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-screen...
+  - sonar.junit.reportPaths=C:\Users\QV-3579\Documents\workspace\google2\build\test-results\test
+  - sonar.junit.reportsPath=C:\Users\QV-3579\Documents\workspace\google2\build\test-results\test
+  - sonar.libraries=C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.2.3\7c4f3c474fb2c041d8028740440937705ebb473a\logback-classic-1.2.3.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-junit\2.2.12\e1be15db811df26640bcf591c8b9c8a7f85c6c2d\serenity-junit-2.2.12.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-screenplay-webdriver\2.2.12\5e9dcca15d7c1e88976f7e022f7cedf799cbcb51\serenity-screenplay-webdriver-2.2.12.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-screenplay-rest\2.2.12\dc1d39d070ce4505f3f8195cd94b85cdeaee05f3\serenity-screenplay-rest-2.2.12.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-screenplay\2.2.12\3caf525a8ba8a72e5c4f530299b0a51b0c621b1b\serenity-screenplay-2.2.12.jar,C:\Users\QV-3579\.gradle\caches\modules-2\files-2.1\net.serenity-bdd\serenity-rest-assured\2.2.12\3765bd325dbbd1af499538a8c9468f3347879950\serenity-r...
+  - sonar.login=******
+  - sonar.projectBaseDir=C:\Users\QV-3579\Documents\workspace\google2
+  - sonar.projectKey=Prueba
+  - sonar.projectName=google2
+  - sonar.projectVersion=unspecified
+  - sonar.scanner.app=ScannerGradle
+  - sonar.scanner.appVersion=2.7-SNAPSHOT/5.6.3
+  - sonar.sourceEncoding=UTF-8
+  - sonar.sources=C:\Users\QV-3579\Documents\workspace\google2\src\main\java
+  - sonar.surefire.reportsPath=C:\Users\QV-3579\Documents\workspace\google2\build\test-results\test
+  - sonar.tests=C:\Users\QV-3579\Documents\workspace\google2\src\test\java
+  - sonar.verbose=true
+  - sonar.working.directory=C:\Users\QV-3579\Documents\workspace\google2\build\sonar

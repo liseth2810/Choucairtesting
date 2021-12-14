@@ -1,0 +1,15 @@
+package co.com.qvision.reto.avianca.ui;
+
+import net.serenitybdd.screenplay.targets.Target;
+
+public class UiAlertJavaScript {
+
+
+	public static final Target BOTON_1 = Target.the("Boton 1").locatedBy("(//button)[1]");
+	public static final Target BOTON_2 = Target.the("Boton 2").locatedBy("(//button)[2]");
+	public static final Target BOTON_3 = Target.the("Boton 3").locatedBy("(//button)[3]");
+
+	private UiAlertJavaScript() {
+
+	}
+}

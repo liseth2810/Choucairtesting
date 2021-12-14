@@ -1,0 +1,15 @@
+package co.com.qvision.reto.avianca.ui;
+
+import org.openqa.selenium.By;
+
+import net.serenitybdd.screenplay.targets.Target;
+
+public class UiFramesAnidados {
+
+	public static final Target FRAME_TITULO = Target.the("Frame padre top").located(By.name("frame-top"));
+	public static final Target FRAME_MEDIO = Target.the("Frame hijo de top").located(By.name("frame-middle"));
+
+	public static final Target PRUEBA_FRAME_ANIDADO = Target.the("Texto del div").locatedBy("//div[@id='content']");
+
+	private UiFramesAnidados() {}
+}
